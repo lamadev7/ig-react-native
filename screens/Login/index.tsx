@@ -8,7 +8,7 @@ import { SafeAreaView, ScrollView, Text, TextInput, TouchableOpacity, View } fro
 import useLogin from './hooks/useLogin';
 
 export default function Login() {
-  const { form, handleChange } = useLogin();
+  const { form, handleChange, handleLoginWithFacebook, handleRedirect, } = useLogin();
 
   return (
     <SafeAreaView>
@@ -37,11 +37,13 @@ export default function Login() {
               onChangeText={(e: any) => handleChange("password", e)}
               style={tailwind`border-[0.5px] border-gray-300 py-4 px-5 w-full bg-[#FAFAFA] rounded-md`}
             />
-            <TouchableOpacity>
+
+            <TouchableOpacity onPress={() => handleRedirect('forget-password')}>
               <View style={tailwind`flex-row justify-end`}>
                 <Text style={tailwind`text-[#3797EF]`}>Forgot password?</Text>
               </View>
             </TouchableOpacity>
+
             <Button
               title='Log in'
               disabledStyle={tailwind`bg-blue-200`}
@@ -49,7 +51,8 @@ export default function Login() {
               disabled={!form?.email || !form?.password}
               buttonStyle={tailwind`border-0 py-3 text-white bg-[#3797EF]`}
             />
-            <TouchableOpacity>
+
+            <TouchableOpacity onPress={handleLoginWithFacebook}>
               <View style={tailwind`my-5 flex-row justify-center items-center gap-4`}>
                 <Icon type='font-awesome' name='facebook-square' color="#3797EF" />
                 <Text style={tailwind`text-lg text-[#3797EF]`}>Log in with Facebook</Text>
@@ -65,7 +68,7 @@ export default function Login() {
             <View style={tailwind`my-5 flex-row justify-center items-center gap-2`}>
 
               <Text style={tailwind`text-gray-500 text-lg`}>Don't have an account?</Text>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={() => handleRedirect('sign-up')}>
                 <Text style={tailwind`text-lg text-[#3797EF]`}>Sign Up.</Text>
               </TouchableOpacity>
             </View>
