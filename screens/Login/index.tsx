@@ -2,8 +2,9 @@
 
 import React from 'react';
 import tailwind from 'twrnc';
+import { Text } from 'react-native';
 import { Button, Icon, Image } from 'react-native-elements';
-import { SafeAreaView, ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { SafeAreaView, ScrollView, TextInput, TouchableOpacity, View } from 'react-native';
 
 import useLogin from './hooks/useLogin';
 
@@ -12,7 +13,7 @@ export default function Login() {
 
   return (
     <SafeAreaView>
-      <ScrollView style={tailwind`h-full p-5`}>
+      <ScrollView style={tailwind`h-full p-5 bg-white`}>
         <View style={tailwind`flex-row`}>
           <Icon type='font-awesome-5' name='chevron-left' />
         </View>
@@ -49,13 +50,13 @@ export default function Login() {
               disabledStyle={tailwind`bg-blue-200`}
               disabledTitleStyle={tailwind`text-white`}
               disabled={!form?.email || !form?.password}
-              buttonStyle={tailwind`border-0 py-3 text-white bg-[#3797EF]`}
+              buttonStyle={tailwind`border-0 py-3 text-white text-[16px] bg-[#3797EF]`}
             />
 
             <TouchableOpacity onPress={handleLoginWithFacebook}>
               <View style={tailwind`my-5 flex-row justify-center items-center gap-4`}>
                 <Icon type='font-awesome' name='facebook-square' color="#3797EF" />
-                <Text style={tailwind`text-lg text-[#3797EF]`}>Log in with Facebook</Text>
+                <Text style={tailwind`text-[16px] font-semibold text-[#3797EF]`}>Log in with Facebook</Text>
               </View>
             </TouchableOpacity>
 
@@ -67,9 +68,9 @@ export default function Login() {
 
             <View style={tailwind`my-5 flex-row justify-center items-center gap-2`}>
 
-              <Text style={tailwind`text-gray-500 text-lg`}>Don't have an account?</Text>
+              <Text style={tailwind`text-gray-500 text-[16px]`}>Don't have an account?</Text>
               <TouchableOpacity onPress={() => handleRedirect('sign-up')}>
-                <Text style={tailwind`text-lg text-[#3797EF]`}>Sign Up.</Text>
+                <Text style={tailwind`text-[16px] text-[#3797EF]`}>Sign Up.</Text>
               </TouchableOpacity>
             </View>
 

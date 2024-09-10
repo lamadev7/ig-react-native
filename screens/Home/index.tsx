@@ -1,12 +1,19 @@
 
 
 import React from 'react';
-import { SafeAreaView, Text } from 'react-native';
+import { SafeAreaView } from 'react-native';
+
+import TopNav from './component/TopNav';
+import StorySlider from './component/StorySlider';
+import useHome from './hooks/useHome';
+import tailwind from 'twrnc';
 
 export default function Home() {
+  const { latestStories } = useHome();
   return (
-    <SafeAreaView>
-        <Text>Home page</Text>
+    <SafeAreaView style={tailwind`bg-white`}>
+      <TopNav />
+      <StorySlider data={latestStories} />
     </SafeAreaView>
   )
 }
