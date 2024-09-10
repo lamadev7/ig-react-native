@@ -1,23 +1,25 @@
 import React from 'react';
 import tailwind from 'twrnc';
 import { FlatList, View } from 'react-native';
-import Avatar from '../../../components/Avatar';
+
 import { IUser } from '../../../lib/types';
+import Avatar from '../../../components/Avatar';
 
 export default function StorySlider({ data }: { data: [] | any }) {
     return (
         <FlatList
             horizontal
             data={data}
-            style={tailwind`px-2 pb-2`}
+            style={tailwind`px-2 pb-4`}
             ItemSeparatorComponent={() => <View style={tailwind`ml-3`} />}
             renderItem={({ item }: { item: IUser }) => {
                 return (
                     <Avatar
+                        showBorder={true}
                         isLive={item?.isLive}
-                        profile={item?.profile}
                         isActive={item?.isActive}
                         username={item?.username}
+                        profile_url={item?.profile_url}
                     />
                 )
             }}

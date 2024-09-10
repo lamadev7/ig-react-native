@@ -1,19 +1,24 @@
 
 
 import React from 'react';
-import { SafeAreaView } from 'react-native';
+import tailwind from 'twrnc';
+import { SafeAreaView, ScrollView } from 'react-native';
 
+import useHome from './hooks/useHome';
+import Posts from './component/Posts';
 import TopNav from './component/TopNav';
 import StorySlider from './component/StorySlider';
-import useHome from './hooks/useHome';
-import tailwind from 'twrnc';
 
 export default function Home() {
   const { latestStories } = useHome();
+
   return (
     <SafeAreaView style={tailwind`bg-white`}>
-      <TopNav />
-      <StorySlider data={latestStories} />
+      <ScrollView>
+        <TopNav />
+        <StorySlider data={latestStories} />
+        <Posts />
+      </ScrollView>
     </SafeAreaView>
   )
 }
