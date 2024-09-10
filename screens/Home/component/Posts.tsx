@@ -12,6 +12,7 @@ export default function Posts() {
             {
                 instagramPosts?.map((d: IPost, i: number) => (
                     <Post
+                        key={i.toString()}
                         id={d?.id}
                         user={d?.user}
                         image={d?.image}

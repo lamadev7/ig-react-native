@@ -32,10 +32,10 @@ export default function Post({ user, location, image, likes, comments }: IPost) 
                 </TouchableOpacity>
             </View>
             <View style={tailwind`h-[400px] w-full`}>
-                <Swiper autoplay loop showsButtons={false} dotColor='white' activeDotStyle={tailwind`relative top-14`} dotStyle={tailwind`bg-gray-400 relative top-14`}>
+                <Swiper showsButtons={false} dotColor='white' activeDotStyle={tailwind`relative top-14`} dotStyle={tailwind`bg-gray-400 relative top-14`}>
                     {
                         image?.map((d: Media, i: number) => (
-                            <View>
+                            <View key={i.toString()}>
                                 <Image
                                     resizeMode='cover'
                                     style={tailwind`w-full h-full`}

@@ -8,6 +8,7 @@ import useHome from './hooks/useHome';
 import Posts from './component/Posts';
 import TopNav from './component/TopNav';
 import StorySlider from './component/StorySlider';
+import BottomNav from '../../components/BottomNav';
 
 export default function Home() {
   const { latestStories } = useHome();
@@ -19,6 +20,7 @@ export default function Home() {
         <StorySlider data={latestStories} />
         <Posts />
       </ScrollView>
+      <BottomNav activeNav="Home" />
     </SafeAreaView>
   )
 }

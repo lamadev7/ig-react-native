@@ -9,14 +9,26 @@ import { IUser } from '../../lib/types';
 export default function Avatar({ username, isLive, profile_url, size, showBorder }: IUser) {
     const trimmedUsername = username?.length > 12 ? `${username?.substr(0, 10)}..` : username;
 
+    const getContainerSize = (size: string | any) => {
+        if (size === 'xsm') return 'h-10 w-10';
+        if (size === 'sm') return 'h-12 w-12';
+        return 'h-16 w-16';
+    }
+
+    const getImageSize = (size: string | any) => {
+        if (size === 'xsm') return 'h-7 w-7';
+        if (size === 'sm') return 'h-10 w-10';
+        return 'h-14 w-14';
+    }
+
     return (
         <TouchableOpacity>
             <View style={tailwind`${username ? 'w-21' : ''} flex items-center gap-2`}>
-                <View style={tailwind`${size == 'sm' ? 'h-12 w-12' : 'h-16 w-16'} p-2 rounded-full overflow-hidden ${showBorder ? 'border-2 border-[#A60F93]' : ''} flex-row items-center justify-center relative`}>
+                <View style={tailwind`${getContainerSize(size)} p-2 rounded-full overflow-hidden ${showBorder ? 'border-2 border-[#A60F93]' : ''} flex-row items-center justify-center relative`}>
                     <Image
                         resizeMode="cover"
                         source={{ uri: profile_url }}
-                        style={tailwind`${size == 'sm' ? 'h-10 w-10' : 'h-14 w-14'} rounded-full`}
+                        style={tailwind`${getImageSize(size)} rounded-full`}
                     />
                 </View>
                 {

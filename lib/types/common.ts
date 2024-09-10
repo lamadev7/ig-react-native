@@ -1,7 +1,7 @@
 
 
 export interface IUser {
-    size?: 'sm' | 'lg',
+    size?: 'xsm' | 'sm' | 'lg',
     full_name?: string,
     username?: string | any,
     profile_url: string,
