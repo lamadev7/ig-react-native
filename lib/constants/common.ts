@@ -1,4 +1,5 @@
-import { IPost } from "../types";
+import moment from "moment";
+import { INotification, INotifications, IPost } from "../types";
 
 export const instagramPosts: IPost[] = [
     {
@@ -479,3 +480,368 @@ export const instagramPosts: IPost[] = [
         is_shared: true,
     },
 ];
+
+export const users = [
+    {
+        username: "parbat_lama",
+        email: "parbat@gmail.com",
+        mobile: 9873477347723,
+        profile_url: "https://randomuser.me/api/portraits/men/1.jpg",
+        isLive: true,
+        isOnline: true,
+    },
+    {
+        username: "sujan_karki",
+        email: "sujan.karki@gmail.com",
+        mobile: 9876543210,
+        profile_url: "https://randomuser.me/api/portraits/men/2.jpg",
+        isLive: false,
+        isOnline: true,
+    },
+    {
+        username: "anjali_sharma",
+        email: "anjali.sharma@gmail.com",
+        mobile: 9812345678,
+        profile_url: "https://randomuser.me/api/portraits/women/1.jpg",
+        isLive: true,
+        isOnline: false,
+    },
+    {
+        username: "rajan_thapa12",
+        email: "rajan.thapa@gmail.com",
+        mobile: 9823456789,
+        profile_url: "https://randomuser.me/api/portraits/men/3.jpg",
+        isLive: false,
+        isOnline: false,
+    },
+    {
+        username: "priya_singh",
+        email: "priya.singh@gmail.com",
+        mobile: 9845678901,
+        profile_url: "https://randomuser.me/api/portraits/women/2.jpg",
+        isLive: true,
+        isOnline: true,
+    },
+    {
+        username: "amit_gurung",
+        email: "amit.gurung@gmail.com",
+        mobile: 9871234567,
+        profile_url: "https://randomuser.me/api/portraits/men/4.jpg",
+        isLive: false,
+        isOnline: true,
+    },
+    {
+        username: "rina_tamang",
+        email: "rina.tamang@gmail.com",
+        mobile: 9801234567,
+        profile_url: "https://randomuser.me/api/portraits/women/3.jpg",
+        isLive: true,
+        isOnline: false,
+    },
+    {
+        username: "bibek_mahat",
+        email: "bibek.mahat@gmail.com",
+        mobile: 9867890123,
+        profile_url: "https://randomuser.me/api/portraits/men/5.jpg",
+        isLive: false,
+        isOnline: false,
+    },
+    {
+        username: "sunita_rai",
+        email: "sunita.rai@gmail.com",
+        mobile: 9811223344,
+        profile_url: "https://randomuser.me/api/portraits/women/4.jpg",
+        isLive: true,
+        isOnline: true,
+    },
+    {
+        username: "manish_khadka",
+        email: "manish.khadka@gmail.com",
+        mobile: 9843322110,
+        profile_url: "https://randomuser.me/api/portraits/men/6.jpg",
+        isLive: false,
+        isOnline: true,
+    }
+];
+
+export const notificationsData: INotifications = {
+    Today: [
+        {
+            users: [
+                {
+                    username: "sujan_karki",
+                    email: "sujan.karki@gmail.com",
+                    mobile: 9876543210,
+                    profile_url: "https://randomuser.me/api/portraits/men/2.jpg",
+                    isLive: false,
+                    isOnline: true,
+                },
+                {
+                    username: "anjali_sharma",
+                    email: "anjali.sharma@gmail.com",
+                    mobile: 9812345678,
+                    profile_url: "https://randomuser.me/api/portraits/women/1.jpg",
+                    isLive: true,
+                    isOnline: false,
+                },
+            ],
+            media: {
+                url: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0",
+                width: 1080,
+                height: 1350,
+            },
+            type: "BULK_LIKE",
+            createdAt: moment().subtract(20, 'minutes').toISOString(),
+        },
+        {
+            users: [
+                {
+                    username: "rajan_thapa12",
+                    email: "rajan.thapa@gmail.com",
+                    mobile: 9823456789,
+                    profile_url: "https://randomuser.me/api/portraits/men/3.jpg",
+                    isLive: false,
+                    isOnline: false,
+                },
+            ],
+            media: {
+                url: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0",
+                width: 1080,
+                height: 1350,
+            },
+            type: "LIKE",
+            createdAt: moment().subtract(12, 'minutes').toISOString(),
+        },
+        {
+            users: [
+                {
+                    username: "rajan_thapa12",
+                    email: "rajan.thapa@gmail.com",
+                    mobile: 9823456789,
+                    profile_url: "https://randomuser.me/api/portraits/men/3.jpg",
+                    isLive: false,
+                    isOnline: false,
+                },
+            ],
+            media: {
+                url: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0",
+                width: 1080,
+                height: 1350,
+            },
+            type: "COMMENT",
+            comment: "OG, THIS IS FIRE 🔥",
+            createdAt: moment().subtract(8, 'hours').toISOString(),
+        }
+    ],
+    Yesterday: [
+        {
+            users: [
+                {
+                    username: "sujan_karki",
+                    email: "sujan.karki@gmail.com",
+                    mobile: 9876543210,
+                    profile_url: "https://randomuser.me/api/portraits/men/2.jpg",
+                    isLive: false,
+                    isOnline: true,
+                },
+                {
+                    username: "anjali_sharma",
+                    email: "anjali.sharma@gmail.com",
+                    mobile: 9812345678,
+                    profile_url: "https://randomuser.me/api/portraits/women/1.jpg",
+                    isLive: true,
+                    isOnline: false,
+                },
+            ],
+            media: {
+                url: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0",
+                width: 1080,
+                height: 1350,
+            },
+            type: "BULK_LIKE",
+            createdAt: moment().subtract(1, 'days').toISOString(),
+        },
+        {
+            users: [
+                {
+                    username: "rajan_thapa12",
+                    email: "rajan.thapa@gmail.com",
+                    mobile: 9823456789,
+                    profile_url: "https://randomuser.me/api/portraits/men/3.jpg",
+                    isLive: false,
+                    isOnline: false,
+                },
+            ],
+            media: {
+                url: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0",
+                width: 1080,
+                height: 1350,
+            },
+            type: "LIKE",
+            createdAt: moment().subtract(3, 'days').toISOString(),
+        },
+        {
+            users: [
+                {
+                    username: "rajan_thapa12",
+                    email: "rajan.thapa@gmail.com",
+                    mobile: 9823456789,
+                    profile_url: "https://randomuser.me/api/portraits/men/3.jpg",
+                    isLive: false,
+                    isOnline: false,
+                },
+            ],
+            media: {
+                url: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0",
+                width: 1080,
+                height: 1350,
+            },
+            type: "COMMENT",
+            comment: "OG, THIS IS FIRE 🔥",
+            createdAt: moment().subtract(6, 'days').toISOString(),
+        }
+    ],
+    WEEKLY: [
+        {
+            users: [
+                {
+                    username: "sujan_karki",
+                    email: "sujan.karki@gmail.com",
+                    mobile: 9876543210,
+                    profile_url: "https://randomuser.me/api/portraits/men/2.jpg",
+                    isLive: false,
+                    isOnline: true,
+                },
+                {
+                    username: "anjali_sharma",
+                    email: "anjali.sharma@gmail.com",
+                    mobile: 9812345678,
+                    profile_url: "https://randomuser.me/api/portraits/women/1.jpg",
+                    isLive: true,
+                    isOnline: false,
+                },
+            ],
+            media: {
+                url: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0",
+                width: 1080,
+                height: 1350,
+            },
+            type: "BULK_LIKE",
+            createdAt: moment().subtract(8, 'days').toISOString(),
+        },
+        {
+            users: [
+                {
+                    username: "rajan_thapa12",
+                    email: "rajan.thapa@gmail.com",
+                    mobile: 9823456789,
+                    profile_url: "https://randomuser.me/api/portraits/men/3.jpg",
+                    isLive: false,
+                    isOnline: false,
+                },
+            ],
+            media: {
+                url: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0",
+                width: 1080,
+                height: 1350,
+            },
+            type: "LIKE",
+            createdAt: moment().subtract(10, 'days').toISOString(),
+        },
+        {
+            users: [
+                {
+                    username: "rajan_thapa12",
+                    email: "rajan.thapa@gmail.com",
+                    mobile: 9823456789,
+                    profile_url: "https://randomuser.me/api/portraits/men/3.jpg",
+                    isLive: false,
+                    isOnline: false,
+                },
+            ],
+            media: {
+                url: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0",
+                width: 1080,
+                height: 1350,
+            },
+            type: "COMMENT",
+            comment: "OG, THIS IS FIRE 🔥",
+            createdAt: moment().subtract(12, 'days').toISOString(),
+        }
+    ],
+    MONTHLY: [
+        {
+            users: [
+                {
+                    username: "sujan_karki",
+                    email: "sujan.karki@gmail.com",
+                    mobile: 9876543210,
+                    profile_url: "https://randomuser.me/api/portraits/men/2.jpg",
+                    isLive: false,
+                    isOnline: true,
+                },
+                {
+                    username: "anjali_sharma",
+                    email: "anjali.sharma@gmail.com",
+                    mobile: 9812345678,
+                    profile_url: "https://randomuser.me/api/portraits/women/1.jpg",
+                    isLive: true,
+                    isOnline: false,
+                },
+            ],
+            media: {
+                url: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0",
+                width: 1080,
+                height: 1350,
+            },
+            type: "BULK_LIKE",
+            createdAt: moment().subtract(18, 'days').toISOString(),
+        },
+        {
+            users: [
+                {
+                    username: "rajan_thapa12",
+                    email: "rajan.thapa@gmail.com",
+                    mobile: 9823456789,
+                    profile_url: "https://randomuser.me/api/portraits/men/3.jpg",
+                    isLive: false,
+                    isOnline: false,
+                },
+            ],
+            media: {
+                url: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0",
+                width: 1080,
+                height: 1350,
+            },
+            type: "LIKE",
+            createdAt: moment().subtract(21, 'days').toISOString(),
+        },
+        {
+            users: [
+                {
+                    username: "rajan_thapa12",
+                    email: "rajan.thapa@gmail.com",
+                    mobile: 9823456789,
+                    profile_url: "https://randomuser.me/api/portraits/men/3.jpg",
+                    isLive: false,
+                    isOnline: false,
+                },
+            ],
+            media: {
+                url: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0",
+                width: 1080,
+                height: 1350,
+            },
+            type: "COMMENT",
+            comment: "OG, THIS IS FIRE 🔥",
+            createdAt: moment().subtract(28, 'days').toISOString(),
+        }
+    ],
+};
+
+export const NOTIF_EVENT_TYPE_ENUM = Object.freeze({
+    BULK_LIKE: 'BULK_LIKE',
+    LIKE: 'LIKE',
+    COMMENT: 'COMMENT',
+    FOLLOW_REQUEST: 'FOLLOW_REQUEST',
+});

@@ -10,7 +10,7 @@ import HomeFilledIcon from "../../assets/icons/home_filled.svg";
 import SearchFilledIcon from "../../assets/icons/search_filled.svg";
 import PluseOutlineIcon from "../../assets/icons/plus_outline.svg";
 import Avatar from '../Avatar';
-import { users } from '../../screens/Home/constant';
+import { users } from '../../lib/constants';
 import { useNavigation } from '@react-navigation/native';
 
 export default function BottomNav({ activeNav }: { activeNav: string }) {

@@ -1,12 +1,12 @@
+import tailwind from 'twrnc';
 import { NavigationContainer } from '@react-navigation/native';
 import { KeyboardAvoidingView, Platform, SafeAreaView } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import Home from './screens/Home';
 import Login from './screens/Login';
-import tailwind from 'twrnc';
-import BottomNav from './components/BottomNav';
 import Search from './screens/Search/page';
+import Notification from './screens/Notification/page';
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -37,6 +37,11 @@ export default function App() {
             <Stack.Screen
               name='Search'
               component={Search}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name='Notification'
+              component={Notification}
               options={{ headerShown: false }}
             />
           </Stack.Navigator>

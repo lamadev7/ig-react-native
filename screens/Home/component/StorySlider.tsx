@@ -11,7 +11,7 @@ export default function StorySlider({ data }: { data: [] | any }) {
             horizontal
             data={data}
             style={tailwind`px-2 pb-4`}
-            ItemSeparatorComponent={() => <View style={tailwind`ml-3`} />}
+            ItemSeparatorComponent={() => <View style={tailwind`ml-1`} />}
             renderItem={({ item }: { item: IUser }) => {
                 return (
                     <Avatar

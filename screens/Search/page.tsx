@@ -22,7 +22,7 @@ export default function Search() {
         },
         { url: "https://luehangs.site/pic-chat-app-images/beautiful-beautiful-woman-beauty-9763.jpg" },
         { URL: "https://luehangs.site/pic-chat-app-images/attractive-balance-beautiful-186263.jpg" },
-    ]
+    ];
 
     return (
         <SafeAreaView style={tailwind`flex-1 bg-white`}>
@@ -36,7 +36,6 @@ export default function Search() {
                 <View style={tailwind`flex-1 mb-10`}>
                     <MasonryList images={trendingImages} />
                 </View>
-
                 <BottomNav activeNav='Search' />
             </View>
         </SafeAreaView>
