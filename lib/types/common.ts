@@ -27,6 +27,7 @@ interface Location {
 
 
 export interface IUser {
+    id: string,
     size?: 'xsm' | 'sm' | 'lg',
     full_name?: string,
     email?: string,
@@ -61,9 +62,10 @@ export interface Media {
 }
 
 export interface INotification {
+    postId?: string | null,
     users: IUser[],
     type: NOTIF_EVENT_TYPE,
-    media: Media,
+    media?: Media,
     comment?: string,
     createdAt: Date | string | number,
     updatedAt?: Date | string,

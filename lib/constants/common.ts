@@ -1,10 +1,11 @@
 import moment from "moment";
-import { INotification, INotifications, IPost } from "../types";
+import { INotifications, IPost } from "../types";
 
 export const instagramPosts: IPost[] = [
     {
         id: "123456789",
         user: {
+            id: "a223dsfk34kkdsfkvadfnvkn34dknv",
             username: "john_doe",
             profile_url: "https://randomuser.me/api/portraits/men/32.jpg",
             full_name: "John Doe",
@@ -35,6 +36,7 @@ export const instagramPosts: IPost[] = [
                 {
                     id: "987654321",
                     user: {
+                        id: "a223dsfk34kkdsfkvadfnvkn34dknv",
                         username: "jane_smith",
                         profile_url: "https://randomuser.me/api/portraits/women/25.jpg",
                         full_name: "Jane Smith",
@@ -58,6 +60,7 @@ export const instagramPosts: IPost[] = [
     {
         id: "123456790",
         user: {
+            id: "a223dsfk34kkdsfkvadfnvkn34dknv",
             username: "lisa_brown",
             profile_url: "https://randomuser.me/api/portraits/women/50.jpg",
             full_name: "Lisa Brown",
@@ -88,6 +91,7 @@ export const instagramPosts: IPost[] = [
                 {
                     id: "987654322",
                     user: {
+                        id: "a223dsfk34kkdsfkvadfnvkn34dknv",
                         username: "danny_smith",
                         profile_url: "https://randomuser.me/api/portraits/men/20.jpg",
                         full_name: "Danny Smith",
@@ -111,6 +115,7 @@ export const instagramPosts: IPost[] = [
     {
         id: "123456791",
         user: {
+            id: "a223dsfk34kkdsfkvadfnvkn34dknv",
             username: "michael_s",
             profile_url: "https://randomuser.me/api/portraits/men/11.jpg",
             full_name: "Michael Stevens",
@@ -141,6 +146,7 @@ export const instagramPosts: IPost[] = [
                 {
                     id: "987654323",
                     user: {
+                        id: "a223dsfk34kkdsfkvadfnvkn34dknv",
                         username: "susan_lee",
                         profile_url: "https://randomuser.me/api/portraits/women/33.jpg",
                         full_name: "Susan Lee",
@@ -164,6 +170,7 @@ export const instagramPosts: IPost[] = [
     {
         id: "123456792",
         user: {
+            id: "a223dsfk34kkdsfkvadfnvkn34dknv",
             username: "emily_rose",
             profile_url: "https://randomuser.me/api/portraits/women/45.jpg",
             full_name: "Emily Rose",
@@ -194,6 +201,7 @@ export const instagramPosts: IPost[] = [
                 {
                     id: "987654324",
                     user: {
+                        id: "a223dsfk34kkdsfkvadfnvkn34dknv",
                         username: "mark_jones",
                         profile_url: "https://randomuser.me/api/portraits/men/10.jpg",
                         full_name: "Mark Jones",
@@ -217,6 +225,7 @@ export const instagramPosts: IPost[] = [
     {
         id: "123456794",
         user: {
+            id: "a223dsfk34kkdsfkvadfnvkn34dknv",
             username: "olivia_h",
             profile_url: "https://randomuser.me/api/portraits/women/21.jpg",
             full_name: "Olivia Harris",
@@ -247,6 +256,7 @@ export const instagramPosts: IPost[] = [
                 {
                     id: "987654326",
                     user: {
+                        id: "a223dsfk34kkdsfkvadfnvkn34dknv",
                         username: "brad_w",
                         profile_url: "https://randomuser.me/api/portraits/men/6.jpg",
                         full_name: "Brad Williams",
@@ -270,6 +280,7 @@ export const instagramPosts: IPost[] = [
     {
         id: "123456795",
         user: {
+            id: "a223dsfk34kkdsfkvadfnvkn34dknv",
             username: "kevin_m",
             profile_url: "https://randomuser.me/api/portraits/men/35.jpg",
             full_name: "Kevin Miller",
@@ -300,6 +311,7 @@ export const instagramPosts: IPost[] = [
                 {
                     id: "987654327",
                     user: {
+                        id: "a223dsfk34kkdsfkvadfnvkn34dknv",
                         username: "melissa_k",
                         profile_url: "https://randomuser.me/api/portraits/women/34.jpg",
                         full_name: "Melissa King",
@@ -323,6 +335,7 @@ export const instagramPosts: IPost[] = [
     {
         id: "123456796",
         user: {
+            id: "a223dsfk34kkdsfkvadfnvkn34dknv",
             username: "ashley_b",
             profile_url: "https://randomuser.me/api/portraits/women/7.jpg",
             full_name: "Ashley Baker",
@@ -353,6 +366,7 @@ export const instagramPosts: IPost[] = [
                 {
                     id: "987654328",
                     user: {
+                        id: "a223dsfk34kkdsfkvadfnvkn34dknv",
                         username: "ben_p",
                         profile_url: "https://randomuser.me/api/portraits/men/17.jpg",
                         full_name: "Ben Parker",
@@ -376,6 +390,7 @@ export const instagramPosts: IPost[] = [
     {
         id: "123456797",
         user: {
+            id: "a223dsfk34kkdsfkvadfnvkn34dknv",
             username: "david_h",
             profile_url: "https://randomuser.me/api/portraits/men/28.jpg",
             full_name: "David Hughes",
@@ -406,6 +421,7 @@ export const instagramPosts: IPost[] = [
                 {
                     id: "987654329",
                     user: {
+                        id: "a223dsfk34kkdsfkvadfnvkn34dknv",
                         username: "rebecca_s",
                         profile_url: "https://randomuser.me/api/portraits/women/10.jpg",
                         full_name: "Rebecca Smith",
@@ -429,6 +445,7 @@ export const instagramPosts: IPost[] = [
     {
         id: "123456798",
         user: {
+            id: "a223dsfk34kkdsfkvadfnvkn34dknv",
             username: "natalie_k",
             profile_url: "https://randomuser.me/api/portraits/women/14.jpg",
             full_name: "Natalie King",
@@ -459,6 +476,7 @@ export const instagramPosts: IPost[] = [
                 {
                     id: "987654330",
                     user: {
+                        id: "a223dsfk34kkdsfkvadfnvkn34dknv",
                         username: "emily_d",
                         profile_url: "https://randomuser.me/api/portraits/women/2.jpg",
                         full_name: "Emily Davis",
@@ -483,6 +501,7 @@ export const instagramPosts: IPost[] = [
 
 export const users = [
     {
+        id: "a223dsfk34kkdsfkvadfnvkn34dknv",
         username: "parbat_lama",
         email: "parbat@gmail.com",
         mobile: 9873477347723,
@@ -491,6 +510,7 @@ export const users = [
         isOnline: true,
     },
     {
+        id: "a223dsfk34kkdsfkvadfnvkn34dknv",
         username: "sujan_karki",
         email: "sujan.karki@gmail.com",
         mobile: 9876543210,
@@ -499,6 +519,7 @@ export const users = [
         isOnline: true,
     },
     {
+        id: "a223dsfk34kkdsfkvadfnvkn34dknv",
         username: "anjali_sharma",
         email: "anjali.sharma@gmail.com",
         mobile: 9812345678,
@@ -507,6 +528,7 @@ export const users = [
         isOnline: false,
     },
     {
+        id: "a223dsfk34kkdsfkvadfnvkn34dknv",
         username: "rajan_thapa12",
         email: "rajan.thapa@gmail.com",
         mobile: 9823456789,
@@ -515,6 +537,7 @@ export const users = [
         isOnline: false,
     },
     {
+        id: "a223dsfk34kkdsfkvadfnvkn34dknv",
         username: "priya_singh",
         email: "priya.singh@gmail.com",
         mobile: 9845678901,
@@ -523,6 +546,7 @@ export const users = [
         isOnline: true,
     },
     {
+        id: "a223dsfk34kkdsfkvadfnvkn34dknv",
         username: "amit_gurung",
         email: "amit.gurung@gmail.com",
         mobile: 9871234567,
@@ -531,6 +555,7 @@ export const users = [
         isOnline: true,
     },
     {
+        id: "a223dsfk34kkdsfkvadfnvkn34dknv",
         username: "rina_tamang",
         email: "rina.tamang@gmail.com",
         mobile: 9801234567,
@@ -539,6 +564,7 @@ export const users = [
         isOnline: false,
     },
     {
+        id: "a223dsfk34kkdsfkvadfnvkn34dknv",
         username: "bibek_mahat",
         email: "bibek.mahat@gmail.com",
         mobile: 9867890123,
@@ -547,6 +573,7 @@ export const users = [
         isOnline: false,
     },
     {
+        id: "a223dsfk34kkdsfkvadfnvkn34dknv",
         username: "sunita_rai",
         email: "sunita.rai@gmail.com",
         mobile: 9811223344,
@@ -555,6 +582,7 @@ export const users = [
         isOnline: true,
     },
     {
+        id: "a223dsfk34kkdsfkvadfnvkn34dknv",
         username: "manish_khadka",
         email: "manish.khadka@gmail.com",
         mobile: 9843322110,
@@ -569,6 +597,7 @@ export const notificationsData: INotifications = {
         {
             users: [
                 {
+                    id: "a223dsfk34kkdsfkvadfnvkn34dknv",
                     username: "sujan_karki",
                     email: "sujan.karki@gmail.com",
                     mobile: 9876543210,
@@ -577,6 +606,7 @@ export const notificationsData: INotifications = {
                     isOnline: true,
                 },
                 {
+                    id: "a223dsfk34kkdsfkvadfnvkn34dknv",
                     username: "anjali_sharma",
                     email: "anjali.sharma@gmail.com",
                     mobile: 9812345678,
@@ -590,46 +620,66 @@ export const notificationsData: INotifications = {
                 width: 1080,
                 height: 1350,
             },
+            postId: "",
             type: "BULK_LIKE",
             createdAt: moment().subtract(20, 'minutes').toISOString(),
         },
         {
             users: [
                 {
+                    id: "a223dsfk34kkdsfkvadfnvkn34dknv",
                     username: "rajan_thapa12",
                     email: "rajan.thapa@gmail.com",
                     mobile: 9823456789,
-                    profile_url: "https://randomuser.me/api/portraits/men/3.jpg",
+                    profile_url: "https://randomuser.me/api/portraits/men/7.jpg",
                     isLive: false,
                     isOnline: false,
                 },
             ],
             media: {
-                url: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0",
+                url: "https://plus.unsplash.com/premium_photo-1673758905770-a62f4309c43c?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                 width: 1080,
                 height: 1350,
             },
+            postId: "",
             type: "LIKE",
             createdAt: moment().subtract(12, 'minutes').toISOString(),
         },
         {
             users: [
                 {
+                    id: "a223dsfk34kkdsfkvadfnvkn34dknv",
                     username: "rajan_thapa12",
                     email: "rajan.thapa@gmail.com",
                     mobile: 9823456789,
-                    profile_url: "https://randomuser.me/api/portraits/men/3.jpg",
+                    profile_url: "https://randomuser.me/api/portraits/men/4.jpg",
                     isLive: false,
                     isOnline: false,
                 },
             ],
             media: {
-                url: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0",
+                url: "https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bW9kZWx8ZW58MHx8MHx8fDA%3D",
                 width: 1080,
                 height: 1350,
             },
+            postId: "",
             type: "COMMENT",
-            comment: "OG, THIS IS FIRE 🔥",
+            comment: "Mind breaking... ",
+            createdAt: moment().subtract(8, 'hours').toISOString(),
+        },
+        {
+            users: [
+                {
+                    id: "a223dsfk34kkdsfkvadfnvkn34dknv",
+                    username: "rajan_thapa12",
+                    email: "rajan.thapa@gmail.com",
+                    mobile: 9823456789,
+                    profile_url: "https://randomuser.me/api/portraits/men/5.jpg",
+                    isLive: false,
+                    isOnline: false,
+                },
+            ],
+            type: "FOLLOW_REQUEST",
             createdAt: moment().subtract(8, 'hours').toISOString(),
         }
     ],
@@ -637,37 +687,41 @@ export const notificationsData: INotifications = {
         {
             users: [
                 {
+                    id: "a223dsfk34kkdsfkvadfnvkn34dknv",
                     username: "sujan_karki",
                     email: "sujan.karki@gmail.com",
                     mobile: 9876543210,
-                    profile_url: "https://randomuser.me/api/portraits/men/2.jpg",
+                    profile_url: "https://randomuser.me/api/portraits/men/7.jpg",
                     isLive: false,
                     isOnline: true,
                 },
                 {
+                    id: "a223dsfk34kkdsfkvadfnvkn34dknv",
                     username: "anjali_sharma",
                     email: "anjali.sharma@gmail.com",
                     mobile: 9812345678,
-                    profile_url: "https://randomuser.me/api/portraits/women/1.jpg",
+                    profile_url: "https://randomuser.me/api/portraits/women/6.jpg",
                     isLive: true,
                     isOnline: false,
                 },
             ],
             media: {
-                url: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0",
+                url: "https://plus.unsplash.com/premium_photo-1669704098750-7cd22c35422b?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bW9kZWx8ZW58MHx8MHx8fDA%3D",
                 width: 1080,
                 height: 1350,
             },
+            postId: "",
             type: "BULK_LIKE",
             createdAt: moment().subtract(1, 'days').toISOString(),
         },
         {
             users: [
                 {
+                    id: "a223dsfk34kkdsfkvadfnvkn34dknv",
                     username: "rajan_thapa12",
                     email: "rajan.thapa@gmail.com",
                     mobile: 9823456789,
-                    profile_url: "https://randomuser.me/api/portraits/men/3.jpg",
+                    profile_url: "https://randomuser.me/api/portraits/men/8.jpg",
                     isLive: false,
                     isOnline: false,
                 },
@@ -677,12 +731,14 @@ export const notificationsData: INotifications = {
                 width: 1080,
                 height: 1350,
             },
+            postId: "",
             type: "LIKE",
             createdAt: moment().subtract(3, 'days').toISOString(),
         },
         {
             users: [
                 {
+                    id: "a223dsfk34kkdsfkvadfnvkn34dknv",
                     username: "rajan_thapa12",
                     email: "rajan.thapa@gmail.com",
                     mobile: 9823456789,
@@ -692,12 +748,13 @@ export const notificationsData: INotifications = {
                 },
             ],
             media: {
-                url: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0",
+                url: "https://plus.unsplash.com/premium_photo-1673757121102-0ca51260861f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fG1vZGVsfGVufDB8fDB8fHww",
                 width: 1080,
                 height: 1350,
             },
+            postId: "",
             type: "COMMENT",
-            comment: "OG, THIS IS FIRE 🔥",
+            comment: "OG !!!",
             createdAt: moment().subtract(6, 'days').toISOString(),
         }
     ],
@@ -705,18 +762,20 @@ export const notificationsData: INotifications = {
         {
             users: [
                 {
+                    id: "a223dsfk34kkdsfkvadfnvkn34dknv",
                     username: "sujan_karki",
                     email: "sujan.karki@gmail.com",
                     mobile: 9876543210,
-                    profile_url: "https://randomuser.me/api/portraits/men/2.jpg",
+                    profile_url: "https://randomuser.me/api/portraits/men/4.jpg",
                     isLive: false,
                     isOnline: true,
                 },
                 {
+                    id: "a223dsfk34kkdsfkvadfnvkn34dknv",
                     username: "anjali_sharma",
                     email: "anjali.sharma@gmail.com",
                     mobile: 9812345678,
-                    profile_url: "https://randomuser.me/api/portraits/women/1.jpg",
+                    profile_url: "https://randomuser.me/api/portraits/women/7.jpg",
                     isLive: true,
                     isOnline: false,
                 },
@@ -726,46 +785,51 @@ export const notificationsData: INotifications = {
                 width: 1080,
                 height: 1350,
             },
+            postId: "",
             type: "BULK_LIKE",
             createdAt: moment().subtract(8, 'days').toISOString(),
         },
         {
             users: [
                 {
+                    id: "a223dsfk34kkdsfkvadfnvkn34dknv",
                     username: "rajan_thapa12",
                     email: "rajan.thapa@gmail.com",
                     mobile: 9823456789,
-                    profile_url: "https://randomuser.me/api/portraits/men/3.jpg",
+                    profile_url: "https://randomuser.me/api/portraits/men/9.jpg",
                     isLive: false,
                     isOnline: false,
                 },
             ],
             media: {
-                url: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0",
+                url: "https://images.unsplash.com/photo-1498982261566-1c28c9cf4c02?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fG1vZGVsfGVufDB8fDB8fHww",
                 width: 1080,
                 height: 1350,
             },
+            postId: "",
             type: "LIKE",
             createdAt: moment().subtract(10, 'days').toISOString(),
         },
         {
             users: [
                 {
+                    id: "a223dsfk34kkdsfkvadfnvkn34dknv",
                     username: "rajan_thapa12",
                     email: "rajan.thapa@gmail.com",
                     mobile: 9823456789,
-                    profile_url: "https://randomuser.me/api/portraits/men/3.jpg",
+                    profile_url: "https://randomuser.me/api/portraits/men/1.jpg",
                     isLive: false,
                     isOnline: false,
                 },
             ],
             media: {
-                url: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0",
+                url: "",
                 width: 1080,
                 height: 1350,
             },
+            postId: "",
             type: "COMMENT",
-            comment: "OG, THIS IS FIRE 🔥",
+            comment: "Super cool!!",
             createdAt: moment().subtract(12, 'days').toISOString(),
         }
     ],
@@ -773,6 +837,7 @@ export const notificationsData: INotifications = {
         {
             users: [
                 {
+                    id: "a223dsfk34kkdsfkvadfnvkn34dknv",
                     username: "sujan_karki",
                     email: "sujan.karki@gmail.com",
                     mobile: 9876543210,
@@ -781,59 +846,65 @@ export const notificationsData: INotifications = {
                     isOnline: true,
                 },
                 {
+                    id: "a223dsfk34kkdsfkvadfnvkn34dknv",
                     username: "anjali_sharma",
                     email: "anjali.sharma@gmail.com",
                     mobile: 9812345678,
-                    profile_url: "https://randomuser.me/api/portraits/women/1.jpg",
+                    profile_url: "https://randomuser.me/api/portraits/women/6.jpg",
                     isLive: true,
                     isOnline: false,
                 },
             ],
             media: {
-                url: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0",
+                url:"https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bW9kZWx8ZW58MHx8MHx8fDA%3D",
                 width: 1080,
                 height: 1350,
             },
+            postId: "",
             type: "BULK_LIKE",
             createdAt: moment().subtract(18, 'days').toISOString(),
         },
         {
             users: [
                 {
+                    id: "a223dsfk34kkdsfkvadfnvkn34dknv",
                     username: "rajan_thapa12",
                     email: "rajan.thapa@gmail.com",
                     mobile: 9823456789,
-                    profile_url: "https://randomuser.me/api/portraits/men/3.jpg",
+                    profile_url: "https://randomuser.me/api/portraits/men/7.jpg",
                     isLive: false,
                     isOnline: false,
                 },
             ],
             media: {
-                url: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0",
+                url: "https://images.unsplash.com/photo-1512310604669-443f26c35f52?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fG1vZGVsfGVufDB8fDB8fHww",
                 width: 1080,
                 height: 1350,
             },
+            postId: "",
             type: "LIKE",
             createdAt: moment().subtract(21, 'days').toISOString(),
         },
         {
             users: [
                 {
+                    id: "a223dsfk34kkdsfkvadfnvkn34dknv",
                     username: "rajan_thapa12",
                     email: "rajan.thapa@gmail.com",
                     mobile: 9823456789,
-                    profile_url: "https://randomuser.me/api/portraits/men/3.jpg",
+                    profile_url: "https://randomuser.me/api/portraits/men/4.jpg",
                     isLive: false,
                     isOnline: false,
                 },
             ],
             media: {
-                url: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0",
+                url: "https://images.unsplash.com/photo-1440589473619-3cde28941638?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fG1vZGVsfGVufDB8fDB8fHww",
                 width: 1080,
                 height: 1350,
             },
+            postId: "",
             type: "COMMENT",
-            comment: "OG, THIS IS FIRE 🔥",
+            comment: "Damn!! 🫠",
             createdAt: moment().subtract(28, 'days').toISOString(),
         }
     ],

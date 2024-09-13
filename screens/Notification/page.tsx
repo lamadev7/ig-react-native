@@ -3,9 +3,9 @@ import tailwind from 'twrnc';
 import { ScrollView, Text, View } from 'react-native';
 
 import NotifCard from './component/NotifCard';
+import { INotification } from '../../lib/types';
 import BottomNav from '../../components/BottomNav';
 import useNotification from './hooks/useNotification';
-import { INotification } from '../../lib/types';
 
 export default function Notification() {
     const { notifications } = useNotification();
