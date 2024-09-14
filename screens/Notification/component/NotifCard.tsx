@@ -63,7 +63,7 @@ export default function NotifCard({ type, users, media, comment, createdAt }: IN
                                 <Avatar
                                     rounded
                                     size={40}
-                                    source={{ uri: "https://randomuser.me/api/portraits/men/2.jpg" }}
+                                    source={{ uri:  users?.[0]?.profile_url}}
                                 />
                             </View>
                             <View style={[tailwind`mt-1 w-[70%] flex-row flex-wrap items-center`, { height: 'fit-content' }]}>
@@ -91,7 +91,7 @@ export default function NotifCard({ type, users, media, comment, createdAt }: IN
                                 <Avatar
                                     rounded
                                     size={40}
-                                    source={{ uri: "https://randomuser.me/api/portraits/men/2.jpg" }}
+                                    source={{ uri: users?.[0]?.profile_url }}
                                 />
                             </View>
                             <View style={[tailwind`mt-1 w-[70%] flex-row flex-wrap items-center`, { height: 'fit-content' }]}>

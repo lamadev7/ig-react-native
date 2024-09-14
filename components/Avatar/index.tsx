@@ -24,7 +24,7 @@ export default function Avatar({ username, isLive, profile_url, size, showBorder
     return (
         <TouchableOpacity>
             <View style={tailwind`${username ? 'w-21' : ''} flex items-center gap-2`}>
-                <View style={tailwind`${getContainerSize(size)} p-2 rounded-full overflow-hidden ${showBorder ? 'border-2 border-[#A60F93]' : ''} flex-row items-center justify-center relative`}>
+                <View style={tailwind`${getContainerSize(size)} rounded-full overflow-hidden flex-row justify-center relative ${showBorder ? 'border-2 border-[#A60F93] p-2 items-center' : ''}`}>
                     <Image
                         resizeMode="cover"
                         source={{ uri: profile_url }}

@@ -15,6 +15,8 @@ export default function StorySlider({ data }: { data: [] | any }) {
             renderItem={({ item }: { item: IUser }) => {
                 return (
                     <Avatar
+                        id={item?.id}
+                        key={item?.id}
                         showBorder={true}
                         isLive={item?.isLive}
                         isActive={item?.isActive}

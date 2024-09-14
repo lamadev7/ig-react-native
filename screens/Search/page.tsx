@@ -2,8 +2,8 @@ import React from 'react';
 import tailwind from 'twrnc';
 import { TextInput } from 'react-native';
 import { SafeAreaView, View } from 'react-native';
-import MasonryList from "react-native-masonry-list";
 import BottomNav from '../../components/BottomNav';
+import MasonryList from "react-native-masonry-list";
 
 export default function Search() {
     const trendingImages = [
@@ -26,13 +26,15 @@ export default function Search() {
 
     return (
         <SafeAreaView style={tailwind`flex-1 bg-white`}>
-            <View style={tailwind`flex-1 p-5 gap-5`}>
-                <TextInput
-                    inputMode='search'
-                    placeholder='Search'
-                    autoCapitalize='none'
-                    style={tailwind`py-3 px-6 bg-slate-100 border border-gray-100 rounded-lg`}
-                />
+            <View style={tailwind`flex-1 gap-5`}>
+                <View style={tailwind`px-3`}>
+                    <TextInput
+                        inputMode='search'
+                        placeholder='Search'
+                        autoCapitalize='none'
+                        style={tailwind`py-3 px-6 bg-slate-100 border border-gray-100 rounded-lg`}
+                    />
+                </View>
                 <View style={tailwind`flex-1 mb-10`}>
                     <MasonryList images={trendingImages} />
                 </View>

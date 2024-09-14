@@ -501,7 +501,7 @@ export const instagramPosts: IPost[] = [
 
 export const users = [
     {
-        id: "a223dsfk34kkdsfkvadfnvkn34dknv",
+        id: "a223dsfk34kkdsfkvadfnvkn34dkn",
         username: "parbat_lama",
         email: "parbat@gmail.com",
         mobile: 9873477347723,
@@ -510,7 +510,7 @@ export const users = [
         isOnline: true,
     },
     {
-        id: "a223dsfk34kkdsfkvadfnvkn34dknv",
+        id: "a223dsfk34kkdsfkvadfnvkn34dkv",
         username: "sujan_karki",
         email: "sujan.karki@gmail.com",
         mobile: 9876543210,
@@ -519,7 +519,7 @@ export const users = [
         isOnline: true,
     },
     {
-        id: "a223dsfk34kkdsfkvadfnvkn34dknv",
+        id: "a223dsfk34kkdsfkvadfnvkn34knv",
         username: "anjali_sharma",
         email: "anjali.sharma@gmail.com",
         mobile: 9812345678,
@@ -528,7 +528,7 @@ export const users = [
         isOnline: false,
     },
     {
-        id: "a223dsfk34kkdsfkvadfnvkn34dknv",
+        id: "a223dsfk34kkdsfkvadfnvkndknv",
         username: "rajan_thapa12",
         email: "rajan.thapa@gmail.com",
         mobile: 9823456789,
@@ -537,7 +537,7 @@ export const users = [
         isOnline: false,
     },
     {
-        id: "a223dsfk34kkdsfkvadfnvkn34dknv",
+        id: "a223dsfk34kkdsfkvadfnn34dknv",
         username: "priya_singh",
         email: "priya.singh@gmail.com",
         mobile: 9845678901,
@@ -546,7 +546,7 @@ export const users = [
         isOnline: true,
     },
     {
-        id: "a223dsfk34kkdsfkvadfnvkn34dknv",
+        id: "a223dsfk34kkdsfkvfnvkn34dknv",
         username: "amit_gurung",
         email: "amit.gurung@gmail.com",
         mobile: 9871234567,
@@ -555,7 +555,7 @@ export const users = [
         isOnline: true,
     },
     {
-        id: "a223dsfk34kkdsfkvadfnvkn34dknv",
+        id: "a223dsfk34ksfkvadfnvkn34dknv",
         username: "rina_tamang",
         email: "rina.tamang@gmail.com",
         mobile: 9801234567,
@@ -564,7 +564,7 @@ export const users = [
         isOnline: false,
     },
     {
-        id: "a223dsfk34kkdsfkvadfnvkn34dknv",
+        id: "a223dsfk34sfkvadfnvkn34dknv",
         username: "bibek_mahat",
         email: "bibek.mahat@gmail.com",
         mobile: 9867890123,
@@ -573,7 +573,7 @@ export const users = [
         isOnline: false,
     },
     {
-        id: "a223dsfk34kkdsfkvadfnvkn34dknv",
+        id: "a223dk34kkdsfkvadfnvkn34dknv",
         username: "sunita_rai",
         email: "sunita.rai@gmail.com",
         mobile: 9811223344,
@@ -582,7 +582,7 @@ export const users = [
         isOnline: true,
     },
     {
-        id: "a223dsfk34kkdsfkvadfnvkn34dknv",
+        id: "a22fk34kkdsfkvadfnvkn34dknv",
         username: "manish_khadka",
         email: "manish.khadka@gmail.com",
         mobile: 9843322110,
@@ -823,7 +823,7 @@ export const notificationsData: INotifications = {
                 },
             ],
             media: {
-                url: "",
+                url: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0",
                 width: 1080,
                 height: 1350,
             },
@@ -856,7 +856,7 @@ export const notificationsData: INotifications = {
                 },
             ],
             media: {
-                url:"https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bW9kZWx8ZW58MHx8MHx8fDA%3D",
+                url: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bW9kZWx8ZW58MHx8MHx8fDA%3D",
                 width: 1080,
                 height: 1350,
             },
@@ -909,6 +909,65 @@ export const notificationsData: INotifications = {
         }
     ],
 };
+
+export const RECENT_MEDIAS = [
+    {
+        url: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+        width: 1080,
+        height: 1080,
+    },
+    {
+        url: "https://images.unsplash.com/photo-1523755231516-e43fd2e8dca5",
+        width: 1080,
+        height: 720,
+    },
+    {
+        url: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0",
+        width: 1080,
+        height: 1350,
+    },
+    {
+        url: "https://images.unsplash.com/photo-1440589473619-3cde28941638?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fG1vZGVsfGVufDB8fDB8fHww",
+        width: 1080,
+        height: 1350,
+    },
+    {
+        url: "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
+        width: 1080,
+        height: 1350,
+    },
+    {
+        url: "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df",
+        width: 1080,
+        height: 720,
+    },
+
+];
+
+export const ADD_POST_BOTTOM_NAV_ITEMS_LABEL = Object.freeze({
+    POST: 'POST',
+    STORY: 'STORY',
+    REELS: 'REELS',
+    LIVE: 'LIVE',
+});
+
+export const SCREEN_NAMES = Object.freeze({
+    ADD_POST: 'AddPost',
+    ADD_STORY: 'AddStory',
+    HOME: 'Home',
+    LOGIN: 'Login',
+    NOTIFICATION: 'Notification',
+    SEARCH: 'Search',
+    ADD_REELS: 'AddReels',
+    ADD_LIVE: 'AddLive',
+});
+
+export const createPostNavTabs = [
+    { title: ADD_POST_BOTTOM_NAV_ITEMS_LABEL.POST, screenName: SCREEN_NAMES.ADD_POST },
+    { title: ADD_POST_BOTTOM_NAV_ITEMS_LABEL.STORY, screenName: SCREEN_NAMES.ADD_STORY },
+    { title: ADD_POST_BOTTOM_NAV_ITEMS_LABEL.REELS, screenName: SCREEN_NAMES.ADD_REELS },
+    { title: ADD_POST_BOTTOM_NAV_ITEMS_LABEL.LIVE, screenName: SCREEN_NAMES.ADD_LIVE },
+]
 
 export const NOTIF_EVENT_TYPE_ENUM = Object.freeze({
     BULK_LIKE: 'BULK_LIKE',
