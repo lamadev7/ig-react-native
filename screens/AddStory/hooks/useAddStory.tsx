@@ -1,15 +1,30 @@
-import { useRef, useState } from 'react';
+import { PixelRatio } from 'react-native';
+import * as MediaLibrary from "expo-media-library";
+import { useEffect, useRef, useState } from 'react';
 import { captureRef } from 'react-native-view-shot';
 import { CameraView, CameraType, useCameraPermissions } from 'expo-camera';
-import { PixelRatio } from 'react-native';
 
 export default function useAddStory() {
     const viewRef = useRef<any>();
     const [cameraRef, setCameraRef] = useState<any>(null);
     const [facing, setFacing] = useState<CameraType>('back');
     const [capturedImage, setCapturedImage] = useState<string | null>(null);
+    const [isOpenThreeDotList, setIsOpenThreeDotList] = useState<Boolean>(false);
 
     const [permission, requestPermission] = useCameraPermissions();
+
+    useEffect(() => {
+        applyPermisionCheck();
+    }, [permission]);
+
+    const applyPermisionCheck = async () => {
+        try {
+            if (!permission?.granted) await requestPermission();
+            await MediaLibrary.requestPermissionsAsync();
+        } catch (error) {
+            console.error(error);
+        }
+    }
 
     const toggleCameraFacing = () => {
         setFacing(current => (current === 'back' ? 'front' : 'back'));
@@ -40,6 +55,7 @@ export default function useAddStory() {
         try {
             if (cameraRef) {
                 const photo = await cameraRef.takePictureAsync();
+
                 setCapturedImage(photo.uri);
             }
         } catch (error) {
@@ -47,8 +63,26 @@ export default function useAddStory() {
         }
     };
 
+    const handleSaveToGallery = async () => {
+        try {
+            if (!capturedImage) return;
+
+            await MediaLibrary.saveToLibraryAsync(capturedImage);
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
     const handleSetCameraRef = (ref: any) => {
         setCameraRef(ref);
+    }
+
+    const handleOpenThreeDotList = () => {
+        setIsOpenThreeDotList(!isOpenThreeDotList);
+    }
+
+    const handleCloseCapturedImage = () => {
+        setCapturedImage(null);
     }
 
     return {
@@ -57,11 +91,14 @@ export default function useAddStory() {
         cameraRef,
         permission,
         CameraView,
+        isOpenThreeDotList,
         capturedImage,
         handleCaptureSS,
         handleCaptureImage,
         handleSetCameraRef,
-        requestPermission,
         toggleCameraFacing,
+        handleSaveToGallery,
+        handleOpenThreeDotList,
+        handleCloseCapturedImage,
     }
 }
