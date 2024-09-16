@@ -2,16 +2,28 @@ import React from 'react';
 import tailwind from 'twrnc';
 import ViewShot from 'react-native-view-shot';
 import { Icon, Image, } from 'react-native-elements';
+import {
+    SoftLightBlend,
+    Emboss,
+    Earlybird,
+    Invert,
+    RadialGradient
+} from 'react-native-image-filter-kit';
 import { SafeAreaView, TouchableOpacity, View, Text } from 'react-native';
 
+
 import Nav from '../AddPost/component/Nav';
-import useAddStory from './hooks/useAddStory';
 import Avatar from '../../components/Avatar';
+import useAddStory from './hooks/useAddStory';
 import SwitchIcon from "../../assets/icons/switch.svg";
+import FilterIcon from "../../assets/icons/filter.svg";
 import CancelIcon from "../../assets/icons/cancel.svg";
+import FlashOnIcon from "../../assets/icons/flash-on.svg";
+import FlashOffIcon from "../../assets/icons/flash-off.svg";
 import ThreeDotIcon from "../../assets/icons/three-dot.svg";
+import FlashAutoIcon from "../../assets/icons/flash-auto.svg";
 import SendBlackIcon from "../../assets/icons/send-black.svg";
-import { ADD_POST_BOTTOM_NAV_ITEMS_LABEL } from '../../lib/constants';
+import { ADD_POST_BOTTOM_NAV_ITEMS_LABEL, CAMERA_ENUM, SCREEN_NAMES } from '../../lib/constants';
 
 export default function AddStory() {
     const {
@@ -19,8 +31,11 @@ export default function AddStory() {
         facing,
         viewRef,
         cameraRef,
+        flashMode,
         isOpenThreeDotList,
         capturedImage,
+        handleFlashMode,
+        handleRedirectTo,
         handleSetCameraRef,
         handleCaptureImage,
         toggleCameraFacing,
@@ -35,7 +50,17 @@ export default function AddStory() {
                 {
                     !capturedImage && (
                         <ViewShot ref={viewRef} style={tailwind`flex-1`}>
-                            <CameraView style={tailwind`flex-1 h-full`} facing={facing} ref={handleSetCameraRef}>
+                            <CameraView flash={flashMode} style={tailwind`flex-1 h-full`} facing={facing} ref={handleSetCameraRef}>
+                                <SafeAreaView>
+                                    <View style={tailwind`p-5 flex-row justify-between`}>
+                                        <TouchableOpacity onPress={() => handleRedirectTo(SCREEN_NAMES.HOME)}>
+                                            <CancelIcon />
+                                        </TouchableOpacity>
+                                        <TouchableOpacity onPress={handleFlashMode}>
+                                            {flashMode === CAMERA_ENUM.ON ? <FlashOnIcon /> : flashMode === CAMERA_ENUM.AUTO ? <FlashAutoIcon /> : <FlashOffIcon />}
+                                        </TouchableOpacity>
+                                    </View>
+                                </SafeAreaView>
                                 <View style={tailwind`absolute bottom-10 w-full flex items-center gap-5`}>
                                     <View style={tailwind`bg-white w-15 h-15 flex-row justify-center items-center rounded-full`}>
                                         <TouchableOpacity onPress={handleCaptureImage}>
@@ -65,15 +90,22 @@ export default function AddStory() {
                                             <CancelIcon />
                                         </View>
                                     </TouchableOpacity>
-                                    <TouchableOpacity onPress={handleOpenThreeDotList}>
-                                        <View style={tailwind`h-11 w-11 flex items-center justify-center rounded-full bg-zinc-600`}>
-                                            <ThreeDotIcon />
-                                        </View>
-                                    </TouchableOpacity>
+                                    <View style={tailwind`flex-row items-center gap-5`}>
+                                        <TouchableOpacity>
+                                            <View style={tailwind`h-11 w-11 flex-row justify-center items-center gap-1 shadow-xl rounded-full bg-zinc-700`}>
+                                                <FilterIcon />
+                                            </View>
+                                        </TouchableOpacity>
+                                        <TouchableOpacity onPress={handleOpenThreeDotList}>
+                                            <View style={tailwind`h-11 w-11 flex items-center justify-center rounded-full bg-zinc-600`}>
+                                                <ThreeDotIcon />
+                                            </View>
+                                        </TouchableOpacity>
+                                    </View>
 
                                     {
                                         isOpenThreeDotList && (
-                                            <View style={tailwind`p-4 flex gap-3 absolute right-5 top-18 bg-zinc-700 opacity-80 w-[60%] rounded-md`}>
+                                            <View style={tailwind`p-5 flex gap-4 absolute right-5 top-18 bg-zinc-700 opacity-80 w-[60%] rounded-md`}>
                                                 <TouchableOpacity>
                                                     <View style={tailwind`pb-3 border-b-[0.2px] border-zinc-500 flex-row justify-between items-center`}>
                                                         <Text style={tailwind`text-white`}>Draw</Text>
@@ -83,7 +115,7 @@ export default function AddStory() {
                                                 <TouchableOpacity onPress={handleSaveToGallery}>
                                                     <View style={tailwind`flex-row justify-between items-center`}>
                                                         <Text style={tailwind`text-white`}>Save</Text>
-                                                        <Icon color="white" type='Octicons' name='download' />
+                                                        <Icon color="white" type='feather' name='download' />
                                                     </View>
                                                 </TouchableOpacity>
                                             </View>
@@ -96,7 +128,7 @@ export default function AddStory() {
                                     style={tailwind`h-[95%] w-full rounded-2xl`}
                                 />
                             </View>
-                            <View style={tailwind`px-2 absolute bottom-12 z-99999 flex-row gap-3`}>
+                            <View style={tailwind`w-full px-2 absolute bottom-12 z-99999 flex-row justify-center gap-4`}>
                                 <TouchableOpacity>
                                     <View style={tailwind`pl-2 pr-5 py-[1px] flex-row items-center gap-1 shadow-xl rounded-full bg-zinc-700`}>
                                         <Avatar size='xsm' profile_url={'https://randomuser.me/api/portraits/men/4.jpg'} id={''} />

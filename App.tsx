@@ -8,8 +8,8 @@ import Login from './screens/Login';
 import AddPost from './screens/AddPost';
 import AddStory from './screens/AddStory';
 import Search from './screens/Search/page';
-import Notification from './screens/Notification/page';
 import { SCREEN_NAMES } from './lib/constants';
+import Notification from './screens/Notification/page';
 
 export default function App() {
   const Stack = createNativeStackNavigator();

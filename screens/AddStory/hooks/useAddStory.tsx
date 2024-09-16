@@ -2,15 +2,19 @@ import { PixelRatio } from 'react-native';
 import * as MediaLibrary from "expo-media-library";
 import { useEffect, useRef, useState } from 'react';
 import { captureRef } from 'react-native-view-shot';
-import { CameraView, CameraType, useCameraPermissions } from 'expo-camera';
+import { CameraView, CameraType, useCameraPermissions, FlashMode } from 'expo-camera';
+import { useNavigation } from '@react-navigation/native';
+import { CAMERA_ENUM } from '../../../lib/constants';
 
 export default function useAddStory() {
     const viewRef = useRef<any>();
     const [cameraRef, setCameraRef] = useState<any>(null);
     const [facing, setFacing] = useState<CameraType>('back');
+    const [flashMode, setFlashMode] = useState<FlashMode>(CAMERA_ENUM.AUTO);
     const [capturedImage, setCapturedImage] = useState<string | null>(null);
     const [isOpenThreeDotList, setIsOpenThreeDotList] = useState<Boolean>(false);
 
+    const navigation = useNavigation<any>();
     const [permission, requestPermission] = useCameraPermissions();
 
     useEffect(() => {
@@ -85,15 +89,32 @@ export default function useAddStory() {
         setCapturedImage(null);
     }
 
+    const handleRedirectTo = (screenName: string) => {
+        if (screenName) navigation.navigate(screenName);
+    }
+
+    const handleFlashMode = () => {
+        let mode = flashMode;
+
+        if (flashMode === CAMERA_ENUM.AUTO) mode = CAMERA_ENUM.ON;
+        else if (flashMode === CAMERA_ENUM.ON) mode = CAMERA_ENUM.OFF;
+        else if (flashMode === CAMERA_ENUM.OFF) mode = CAMERA_ENUM.AUTO;
+
+        setFlashMode(mode);
+    }
+
     return {
         facing,
         viewRef,
         cameraRef,
+        flashMode,
         permission,
         CameraView,
         isOpenThreeDotList,
         capturedImage,
+        handleFlashMode,
         handleCaptureSS,
+        handleRedirectTo,
         handleCaptureImage,
         handleSetCameraRef,
         toggleCameraFacing,

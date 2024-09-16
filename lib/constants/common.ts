@@ -975,3 +975,9 @@ export const NOTIF_EVENT_TYPE_ENUM = Object.freeze({
     COMMENT: 'COMMENT',
     FOLLOW_REQUEST: 'FOLLOW_REQUEST',
 });
+
+export const CAMERA_ENUM = Object.freeze({
+    ON: 'on',
+    OFF: 'off',
+    AUTO: 'auto',
+});
