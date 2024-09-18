@@ -1,21 +1,26 @@
-import { PixelRatio } from 'react-native';
 import * as MediaLibrary from "expo-media-library";
 import { useEffect, useRef, useState } from 'react';
 import { captureRef } from 'react-native-view-shot';
-import { CameraView, CameraType, useCameraPermissions, FlashMode } from 'expo-camera';
+import { PixelRatio, Dimensions } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { CAMERA_ENUM } from '../../../lib/constants';
+import { manipulateAsync, FlipType, SaveFormat } from 'expo-image-manipulator';
+import { CameraView, CameraType, useCameraPermissions, FlashMode } from 'expo-camera';
+import { CAMERA_ENUM, colorEffectMatrix, FILTER_ENUM } from '../../../lib/constants';
 
 export default function useAddStory() {
     const viewRef = useRef<any>();
+    const [blurValue, setBlurValue] = useState(0);
+    const [editMode, setEditMode] = useState<any>(null);
     const [cameraRef, setCameraRef] = useState<any>(null);
+    const [effectType, setEffectType] = useState<any>(null);
     const [facing, setFacing] = useState<CameraType>('back');
     const [flashMode, setFlashMode] = useState<FlashMode>(CAMERA_ENUM.AUTO);
     const [capturedImage, setCapturedImage] = useState<string | null>(null);
-    const [isOpenThreeDotList, setIsOpenThreeDotList] = useState<Boolean>(false);
+    const [selectedFilterColor, setSelectedFilterColor] = useState<any>(colorEffectMatrix?.[0]);
 
     const navigation = useNavigation<any>();
     const [permission, requestPermission] = useCameraPermissions();
+    const { width: screenWidth, height: screenHeight } = Dimensions.get('screen');
 
     useEffect(() => {
         applyPermisionCheck();
@@ -81,10 +86,6 @@ export default function useAddStory() {
         setCameraRef(ref);
     }
 
-    const handleOpenThreeDotList = () => {
-        setIsOpenThreeDotList(!isOpenThreeDotList);
-    }
-
     const handleCloseCapturedImage = () => {
         setCapturedImage(null);
     }
@@ -103,23 +104,89 @@ export default function useAddStory() {
         setFlashMode(mode);
     }
 
+    const handleRotate = async () => {
+        try {
+            const manipResult = await manipulateAsync(
+                capturedImage,
+                [{ rotate: 90 }],
+                { compress: 1, format: SaveFormat.PNG }
+            );
+            setCapturedImage(manipResult?.uri);
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
+    const handleFlip = async () => {
+        try {
+            const manipResult = await manipulateAsync(
+                capturedImage,
+                [{ flip: FlipType.Vertical }],
+                { compress: 1, format: SaveFormat.PNG }
+            );
+            setCapturedImage(manipResult?.uri);
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
+    const handleCloseEditMode = () => {
+        setEditMode(null);
+    }
+
+    const handleApplyBlur = () => {
+        setEditMode(FILTER_ENUM.BLUR)
+    }
+
+    const handleBlurValueChange = (val: number) => {
+        setBlurValue(val)
+    }
+
+
+    const handleSelectEffectType = (_effectType: string) => {
+        setEffectType(_effectType === effectType ? null : _effectType);
+    }
+
+    const handleApplySelectedFilter = (filterColor: any) => {
+        setSelectedFilterColor(filterColor);
+    }
+
+    const handleApplyEditMode = (editMode: string) => {
+        setEditMode(editMode);
+
+        if (editMode === FILTER_ENUM.ROTATE) handleRotate();
+        else if (editMode === FILTER_ENUM.FLIP) handleFlip();
+        else if (editMode === FILTER_ENUM.BLUR) handleApplyBlur();
+        else if (editMode === FILTER_ENUM.FLIP) handleFlip();
+        else if (editMode === FILTER_ENUM.FLIP) handleFlip();
+    }
+
+
     return {
         facing,
         viewRef,
+        editMode,
         cameraRef,
         flashMode,
+        blurValue,
         permission,
         CameraView,
-        isOpenThreeDotList,
+        screenWidth,
+        screenHeight,
         capturedImage,
+        selectedFilterColor,
         handleFlashMode,
         handleCaptureSS,
         handleRedirectTo,
         handleCaptureImage,
         handleSetCameraRef,
         toggleCameraFacing,
+        handleCloseEditMode,
         handleSaveToGallery,
-        handleOpenThreeDotList,
+        handleApplyEditMode,
+        handleBlurValueChange,
+        handleSelectEffectType,
         handleCloseCapturedImage,
+        handleApplySelectedFilter,
     }
 }

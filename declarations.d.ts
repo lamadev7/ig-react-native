@@ -6,3 +6,4 @@ declare module '*.svg' {
 
 declare module 'react-native-masonry-list';
 declare module 'humanize-duration';
+declare module 'expo-image-manipulator';
