@@ -1,7 +1,7 @@
+import { Dimensions } from 'react-native';
 import * as MediaLibrary from "expo-media-library";
 import { useEffect, useRef, useState } from 'react';
 import { captureRef } from 'react-native-view-shot';
-import { PixelRatio, Dimensions } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { manipulateAsync, FlipType, SaveFormat } from 'expo-image-manipulator';
 import { CameraView, CameraType, useCameraPermissions, FlashMode } from 'expo-camera';
@@ -9,6 +9,8 @@ import { CAMERA_ENUM, colorEffectMatrix, FILTER_ENUM } from '../../../lib/consta
 
 export default function useAddStory() {
     const viewRef = useRef<any>();
+    const canvasRef = useRef<any>();
+
     const [blurValue, setBlurValue] = useState(0);
     const [editMode, setEditMode] = useState<any>(null);
     const [cameraRef, setCameraRef] = useState<any>(null);
@@ -41,15 +43,10 @@ export default function useAddStory() {
 
     const handleCaptureSS = async () => {
         try {
-            const targetPixelCount = 1080; // If you want full HD pictures
-            const pixelRatio = PixelRatio.get(); // The pixel ratio of the device
-            // pixels * pixelRatio = targetPixelCount, so pixels = targetPixelCount / pixelRatio
-            const pixels = targetPixelCount / pixelRatio;
-
             const result = await captureRef(viewRef, {
                 result: 'tmpfile',
-                height: pixels,
-                width: pixels,
+                height: screenHeight,
+                width: screenWidth,
                 quality: 1,
                 format: 'png',
             });
@@ -74,9 +71,15 @@ export default function useAddStory() {
 
     const handleSaveToGallery = async () => {
         try {
-            if (!capturedImage) return;
+            const result = await captureRef(canvasRef, {
+                result: 'tmpfile',
+                height: screenHeight,
+                width: screenWidth,
+                quality: 1,
+                format: 'png',
+            });
 
-            await MediaLibrary.saveToLibraryAsync(capturedImage);
+            await MediaLibrary.saveToLibraryAsync(result);
         } catch (error) {
             console.error(error);
         }
@@ -166,6 +169,7 @@ export default function useAddStory() {
         facing,
         viewRef,
         editMode,
+        canvasRef,
         cameraRef,
         flashMode,
         blurValue,

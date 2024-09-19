@@ -25,6 +25,7 @@ export default function AddStory() {
         viewRef,
         editMode,
         cameraRef,
+        canvasRef,
         flashMode,
         blurValue,
         screenWidth,
@@ -101,11 +102,11 @@ export default function AddStory() {
                                     </View>
                                 </View>
 
-                                <Canvas style={{ flex: 1 }}>
+                                <Canvas style={{ width: screenWidth, height: screenHeight }} ref={canvasRef}>
                                     <Image
                                         x={0}
                                         y={0}
-                                        fit="cover"
+                                        fit="fill"
                                         image={imageuri}
                                         width={screenWidth}
                                         height={screenHeight}
