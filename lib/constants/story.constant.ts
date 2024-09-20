@@ -106,3 +106,38 @@ export const FILTER_EFFECT_TYPES = Object.freeze({
     DEFAULT: 'Default',
 
 });
+
+export const colors = [
+    {
+        name: 'black',
+        value: 'black'
+    },
+    {
+        name: 'white',
+        value: 'white'
+    },
+    {
+        name: 'red',
+        value: 'red'
+    },
+    {
+        name: 'blue',
+        value: 'blue'
+    },
+    {
+        name: 'green',
+        value: 'green'
+    },
+    {
+        name: 'purple',
+        value: 'purple'
+    },
+    {
+        name: 'orange',
+        value: 'orange'
+    },
+    {
+        name: 'yellow',
+        value: 'yellow'
+    }
+];

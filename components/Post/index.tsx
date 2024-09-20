@@ -17,7 +17,7 @@ export default function Post({ user, location, image, likes, comments }: IPost) 
         <View style={tailwind``}>
             <View style={tailwind`px-3 py-1 flex-row justify-between items-center`}>
                 <View style={tailwind`flex-row items-center gap-2`}>
-                    <Avatar size='sm' profile_url={"https://images.ctfassets.net/az3stxsro5h5/24L2UM6hV3m4csMvBzkHbj/9d4583541bdb29ae0c6a9ff2b60f1313/After.jpeg?w=2389&h=2986&fl=progressive&q=50&fm=jpg"} />
+                    <Avatar size='sm' profile_url={"https://images.ctfassets.net/az3stxsro5h5/24L2UM6hV3m4csMvBzkHbj/9d4583541bdb29ae0c6a9ff2b60f1313/After.jpeg?w=2389&h=2986&fl=progressive&q=50&fm=jpg"} id={''} />
                     <View>
                         <Text style={tailwind`font-semibold`}>{user?.username}</Text>
                         <Text style={tailwind`text-[12px] mt-[2px]`}>{location?.name}</Text>

@@ -3,8 +3,8 @@ import tailwind from 'twrnc';
 import ViewShot from 'react-native-view-shot';
 import Slider from '@react-native-community/slider';
 import { Icon, Image as ImageR } from 'react-native-elements';
-import { Canvas, Blur, Image, ColorMatrix, useImage } from "@shopify/react-native-skia";
-import { SafeAreaView, TouchableOpacity, View, Text, ScrollView, StatusBar } from 'react-native';
+import { Canvas, Blur, Image, ColorMatrix, useImage, Path } from "@shopify/react-native-skia";
+import { SafeAreaView, TouchableOpacity, View, Text, ScrollView, StatusBar, } from 'react-native';
 
 import Nav from '../AddPost/component/Nav';
 import Avatar from '../../components/Avatar';
@@ -16,11 +16,12 @@ import FlashOnIcon from "../../assets/icons/flash-on.svg";
 import FlashOffIcon from "../../assets/icons/flash-off.svg";
 import FlashAutoIcon from "../../assets/icons/flash-auto.svg";
 import SendBlackIcon from "../../assets/icons/send-black.svg";
-import { ADD_POST_BOTTOM_NAV_ITEMS_LABEL, CAMERA_ENUM, colorEffectMatrix, FILTER_EFFECT_TYPES, FILTER_ENUM, SCREEN_NAMES } from '../../lib/constants';
+import { ADD_POST_BOTTOM_NAV_ITEMS_LABEL, CAMERA_ENUM, colorEffectMatrix, colors, FILTER_EFFECT_TYPES, FILTER_ENUM, SCREEN_NAMES } from '../../lib/constants';
 
 export default function AddStory() {
     const {
         CameraView,
+        paths,
         facing,
         viewRef,
         editMode,
@@ -28,11 +29,13 @@ export default function AddStory() {
         canvasRef,
         flashMode,
         blurValue,
-        screenWidth,
-        screenHeight,
+        textColor,
+        panResponder,
         capturedImage,
+        screenDimension,
         selectedFilterColor,
         handleFlashMode,
+        handleResetEdit,
         handleRedirectTo,
         handleSetCameraRef,
         handleCaptureImage,
@@ -40,6 +43,7 @@ export default function AddStory() {
         handleApplyEditMode,
         handleSaveToGallery,
         handleCloseEditMode,
+        handleApplyTextColor,
         handleBlurValueChange,
         handleCloseCapturedImage,
         handleApplySelectedFilter,
@@ -90,7 +94,7 @@ export default function AddStory() {
                                 <View style={tailwind`w-full p-4 absolute top-1 z-99999 flex-row justify-between items-center`}>
                                     <TouchableOpacity onPress={handleCloseCapturedImage}>
                                         <View style={tailwind`h-11 w-11 flex items-center justify-center rounded-full bg-zinc-600`}>
-                                            <CancelIcon />
+                                            <Icon type='entypo' name='cross' color='white' />
                                         </View>
                                     </TouchableOpacity>
                                     <View style={tailwind`flex-row items-center gap-4`}>
@@ -102,14 +106,14 @@ export default function AddStory() {
                                     </View>
                                 </View>
 
-                                <Canvas style={{ width: screenWidth, height: screenHeight }} ref={canvasRef}>
+                                <Canvas style={{ width: screenDimension.width, height: screenDimension.height }} ref={canvasRef}  {...(editMode == FILTER_ENUM.PAINT ? panResponder.panHandlers : {})}>
                                     <Image
                                         x={0}
                                         y={0}
                                         fit="fill"
                                         image={imageuri}
-                                        width={screenWidth}
-                                        height={screenHeight}
+                                        width={screenDimension.width}
+                                        height={screenDimension.height}
 
                                     >
                                         <Blur blur={blurValue} mode="clamp">
@@ -120,6 +124,17 @@ export default function AddStory() {
                                             }
                                         </Blur>
                                     </Image>
+                                    {
+                                        paths.map((path: any, index: number) => (
+                                            <Path
+                                                key={index}
+                                                path={path}
+                                                style="stroke"
+                                                strokeWidth={4}
+                                                color={textColor}
+                                            />
+                                        ))
+                                    }
                                 </Canvas>
 
                                 {
@@ -138,6 +153,20 @@ export default function AddStory() {
                                             <TouchableOpacity onPress={handleCloseEditMode}>
                                                 <Icon name='check' type='feather' color='white' />
                                             </TouchableOpacity>
+                                        </View>
+                                    )
+                                }
+
+                                {
+                                    editMode == FILTER_ENUM.PAINT && (
+                                        <View style={tailwind`w-full pl-2 pr-6 absolute bottom-35 flex-row justify-between items-center`}>
+                                            {
+                                                colors.map((color: any, i: number) => (
+                                                    <TouchableOpacity key={i.toString()} onPress={() => handleApplyTextColor(color.value)}>
+                                                        <View style={[tailwind`h-6 w-6 rounded-full border border-gray-100`, { backgroundColor: color.value }]} />
+                                                    </TouchableOpacity>
+                                                ))
+                                            }
                                         </View>
                                     )
                                 }
@@ -184,32 +213,32 @@ export default function AddStory() {
                                 <ScrollView style={tailwind`w-full absolute bottom-18`} horizontal showsHorizontalScrollIndicator={false}>
                                     <View style={tailwind`pl-2 flex-row items-center justify-center gap-4 relative`}>
                                         <TouchableOpacity onPress={() => handleApplyEditMode(FILTER_ENUM.ROTATE)}>
-                                            <View style={tailwind`h-11 w-11 flex-row justify-center items-center gap-1 shadow-lg rounded-full bg-zinc-700 ${editMode === FILTER_ENUM.ROTATE ? 'opacity-75' : ''}`}>
+                                            <View style={tailwind`h-11 w-11 flex-row justify-center items-center gap-1 shadow-lg rounded-full bg-zinc-700 ${editMode === FILTER_ENUM.ROTATE ? 'bg-black border border-red-700' : ''}`}>
                                                 <Icon name='crop-rotate' type='materialicons' color='white' />
                                             </View>
                                         </TouchableOpacity>
                                         <TouchableOpacity onPress={() => handleApplyEditMode(FILTER_ENUM.CROP)}>
-                                            <View style={tailwind`h-11 w-11 flex-row justify-center items-center gap-1 shadow-lg rounded-full bg-zinc-700 ${editMode === FILTER_ENUM.CROP ? 'opacity-75' : ''}`}>
+                                            <View style={tailwind`h-11 w-11 flex-row justify-center items-center gap-1 shadow-lg rounded-full bg-zinc-700 ${editMode === FILTER_ENUM.CROP ? 'bg-black border border-red-700' : ''}`}>
                                                 <Icon name='crop' type='entypo' color='white' />
                                             </View>
                                         </TouchableOpacity>
                                         <TouchableOpacity onPress={() => handleApplyEditMode(FILTER_ENUM.FLIP)}>
-                                            <View style={tailwind`h-11 w-11 flex-row justify-center items-center gap-1 shadow-lg rounded-full bg-zinc-700 ${editMode === FILTER_ENUM.FLIP ? 'opacity-75' : ''}`}>
+                                            <View style={tailwind`h-11 w-11 flex-row justify-center items-center gap-1 shadow-lg rounded-full bg-zinc-700 ${editMode === FILTER_ENUM.FLIP ? 'bg-black border border-red-700' : ''}`}>
                                                 <Icon name='flip' type='materialicons' color='white' />
                                             </View>
                                         </TouchableOpacity>
                                         <TouchableOpacity onPress={() => handleApplyEditMode(FILTER_ENUM.BLUR)}>
-                                            <View style={tailwind`h-11 w-11 flex-row justify-center items-center gap-1 shadow-lg rounded-full bg-zinc-700 ${editMode === FILTER_ENUM.BLUR ? 'opacity-75' : ''}`}>
+                                            <View style={tailwind`h-11 w-11 flex-row justify-center items-center gap-1 shadow-lg rounded-full bg-zinc-700 ${editMode === FILTER_ENUM.BLUR ? 'bg-black border border-red-700' : ''}`}>
                                                 <Icon name='lens-blur' type='materialicons' color='white' />
                                             </View>
                                         </TouchableOpacity>
                                         <TouchableOpacity onPress={() => handleApplyEditMode(FILTER_ENUM.PAINT)}>
-                                            <View style={tailwind`h-11 w-11 flex-row justify-center items-center gap-1 shadow-lg rounded-full bg-zinc-700 ${editMode === FILTER_ENUM.PAINT ? 'opacity-75' : ''}`}>
+                                            <View style={tailwind`h-11 w-11 flex-row justify-center items-center gap-1 shadow-lg rounded-full bg-zinc-700 ${editMode === FILTER_ENUM.PAINT ? 'bg-black border border-red-700' : ''}`}>
                                                 <Icon color="white" type='font-awesome-5' name='paint-brush' size={18} />
                                             </View>
                                         </TouchableOpacity>
                                         <TouchableOpacity onPress={() => handleApplyEditMode(FILTER_ENUM.EFFECTS)}>
-                                            <View style={tailwind`h-11 w-11 flex-row justify-center items-center gap-1 shadow-lg rounded-full bg-zinc-700 ${editMode === FILTER_ENUM.EFFECTS ? 'opacity-75' : ''}`}>
+                                            <View style={tailwind`h-11 w-11 flex-row justify-center items-center gap-1 shadow-lg rounded-full bg-zinc-700 ${editMode === FILTER_ENUM.EFFECTS ? 'bg-black border border-red-700' : ''}`}>
                                                 <FilterIcon />
                                             </View>
                                         </TouchableOpacity>
@@ -227,6 +256,11 @@ export default function AddStory() {
                                     <View style={tailwind`px-5 py-3 flex-row items-center gap-2 shadow-xl rounded-full bg-zinc-700`}>
                                         <SendBlackIcon />
                                         <Text style={tailwind`text-white text-[12px] text-gray-200`}>Send Message</Text>
+                                    </View>
+                                </TouchableOpacity>
+                                <TouchableOpacity onPress={handleCloseEditMode}>
+                                    <View style={tailwind`px-3 py-2 flex-row items-center gap-2 shadow-xl rounded-full bg-zinc-700`}>
+                                        <Icon type='materialicons' name='format-color-reset' color='white' />
                                     </View>
                                 </TouchableOpacity>
                             </View>
