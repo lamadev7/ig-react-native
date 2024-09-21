@@ -45,7 +45,7 @@ export default function useAddStory() {
     const [textColor, setTextColor] = useState(colors?.[0].value);
     const [flashMode, setFlashMode] = useState<FlashMode>(CAMERA_ENUM.AUTO);
     const [capturedImage, setCapturedImage] = useState<string | null>(null);
-    const [screenDimension, setScreenDimesion] = useState({ height: 0, width: 0});
+    const [screenDimension, setScreenDimesion] = useState({ height: 0, width: 0 });
     const [selectedFilterColor, setSelectedFilterColor] = useState<any>(colorEffectMatrix?.[0]);
     const [originalCapturedImageUri, setOriginalCapturedImageUri] = useState<string | null>(null);
 
@@ -54,7 +54,7 @@ export default function useAddStory() {
 
     useEffect(() => {
         const { width, height } = Dimensions.get('screen');
-        setScreenDimesion({width, height});
+        setScreenDimesion({ width, height });
     }, []);
 
     useEffect(() => {
@@ -126,7 +126,6 @@ export default function useAddStory() {
 
     const handleResetEdit = ({ isBackToCamera }: { isBackToCamera?: Boolean }) => {
         setPaths([]);
-        setBlurValue(0);
         setEffectType(null);
         setSelectedFilterColor(colorEffectMatrix?.[0]);
 
@@ -183,7 +182,7 @@ export default function useAddStory() {
     };
 
     const handleCloseEditMode = () => {
-        handleResetEdit({ isBackToCamera: false });
+        setEditMode(null);
     }
 
     const handleApplyBlur = () => {

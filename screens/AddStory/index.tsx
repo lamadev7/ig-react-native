@@ -6,7 +6,7 @@ import { Icon, Image as ImageR } from 'react-native-elements';
 import { Canvas, Blur, Image, ColorMatrix, useImage, Path } from "@shopify/react-native-skia";
 import { SafeAreaView, TouchableOpacity, View, Text, ScrollView, StatusBar, } from 'react-native';
 
-import Nav from '../AddPost/component/Nav';
+import Nav from '../AddPost/component/BottomNav';
 import Avatar from '../../components/Avatar';
 import useAddStory from './hooks/useAddStory';
 import SwitchIcon from "../../assets/icons/switch.svg";
@@ -258,7 +258,7 @@ export default function AddStory() {
                                         <Text style={tailwind`text-white text-[12px] text-gray-200`}>Send Message</Text>
                                     </View>
                                 </TouchableOpacity>
-                                <TouchableOpacity onPress={handleCloseEditMode}>
+                                <TouchableOpacity onPress={() => handleResetEdit({ isBackToCamera: true })}>
                                     <View style={tailwind`px-3 py-2 flex-row items-center gap-2 shadow-xl rounded-full bg-zinc-700`}>
                                         <Icon type='materialicons' name='format-color-reset' color='white' />
                                     </View>
